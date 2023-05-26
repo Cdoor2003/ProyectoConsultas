@@ -5,6 +5,12 @@ public class Funcionario extends Persona {
 	private String profesion;
 	private Consulta consulta;
 
+	public Funcionario(String nombre, String apellido, String rut, int edad, String prevision, String genero, int telefono, String correoElectronico, String tipoContrato, String profesion) {
+		super(nombre, apellido, rut, edad, prevision, genero, telefono, correoElectronico);
+		this.tipoContrato = tipoContrato;
+		this.profesion = profesion;
+	}
+
 	public String getTipoContrato() {
 		return this.tipoContrato;
 	}
@@ -22,14 +28,13 @@ public class Funcionario extends Persona {
 	}
 
 	public String getTipo() {
-		throw new UnsupportedOperationException();
+		return "Funcionario";
 	}
 
+	@Override
 	public String toString() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Funcionario(String nombre, String apellido, String rut, int edad, String prevision, String genero, int telefono, String correoElectronico, String tipoContrato, String profesion) {
-		throw new UnsupportedOperationException();
+		return super.toString()+
+				"Tipo contrato: "+tipoContrato+
+				"Profesión: "+profesion;
 	}
 }

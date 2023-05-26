@@ -1,13 +1,23 @@
 package model;
 
-public abstract class Consulta {
+import java.util.Date;
+
+public class Consulta {
 	private String rutFuncionario;
 	private String rutPaciente;
-	private Date fecha;
+	private String fecha;
 	private String hora;
 	private String motivoConsulta;
 	private Funcionario funcionario;
 	private Paciente paciente;
+
+	public Consulta(String rutFuncionario, String rutPaciente, String fecha, String hora, String motivoConsulta) {
+		this.rutFuncionario = rutFuncionario;
+		this.rutPaciente = rutPaciente;
+		this.fecha = fecha;
+		this.hora = hora;
+		this.motivoConsulta = motivoConsulta;
+	}
 
 	public String getRutFuncionario() {
 		return this.rutFuncionario;
@@ -25,11 +35,11 @@ public abstract class Consulta {
 		this.rutPaciente = rutPaciente;
 	}
 
-	public Date getFecha() {
+	public String getFecha() {
 		return this.fecha;
 	}
 
-	public void setFecha(Date fecha) {
+	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
 
@@ -47,13 +57,5 @@ public abstract class Consulta {
 
 	public void setMotivoConsulta(String motivoConsulta) {
 		this.motivoConsulta = motivoConsulta;
-	}
-
-	public Consulta(String rutFuncionario, String rutPaciente, Date fecha, String hora, String motivoConsulta) {
-		throw new UnsupportedOperationException();
-	}
-
-	public String toString() {
-		throw new UnsupportedOperationException();
 	}
 }

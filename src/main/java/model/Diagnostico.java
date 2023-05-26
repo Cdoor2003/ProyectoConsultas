@@ -1,8 +1,16 @@
 package model;
 
+import java.util.Date;
+
 public class Diagnostico extends Consulta {
 	private String diagnostico;
 	private String receta;
+
+	public Diagnostico(String rutFuncionario, String rutPaciente, String fecha, String hora, String motivoConsulta, String diagnostico, String receta) {
+		super(rutFuncionario, rutPaciente, fecha, hora, motivoConsulta);
+		this.diagnostico = diagnostico;
+		this.receta = receta;
+	}
 
 	public String getDiagnostico() {
 		return this.diagnostico;
@@ -18,10 +26,6 @@ public class Diagnostico extends Consulta {
 
 	public void setReceta(String receta) {
 		this.receta = receta;
-	}
-
-	public Diagnostico(String rutFuncionario, String rutPaciente, Date fecha, String hora, String motivoConsulta, String diagnostico, String receta) {
-		throw new UnsupportedOperationException();
 	}
 
 	public String toString() {
